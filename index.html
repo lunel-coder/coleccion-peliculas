@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colección de Películas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background: #000;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            justify-content: center;
+        }
+        .video-container {
+            width: 90vw;
+            max-width: 1200px;
+            height: 56.25vw;
+            max-height: 675px;
+            background: #111;
+            margin-bottom: 30px;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .botones {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 90vw;
+            max-width: 1200px;
+        }
+        .btn {
+            width: 60px;
+            height: 60px;
+            background: #2c2c2c;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .btn.active {
+            background: #2a75bb;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <iframe id="player" src="https://vod-limit-stream.dramasfree.com/a0168de5321b71f0817b5114c0db0102/c9fa9833f9eb44dfb83978dbe35a19d1-c17ceb04bcd21c4a2abff4d0b908da6f-ld.m3u8?hdnts=exp=1771235958_acl=/a0168de5321b71f0817b5114c0db0102/*_hmac=68d2c5bf6c58fe78ce2f13b7e9c84acfcf9010139c798195db4a30d409b1d8f5"></iframe>
+    </div>
+
+    <div class="botones">
+        <button class="btn active" onclick="cambiar(1)">1</button>
+        <button class="btn" onclick="cambiar(2)">2</button>
+        <button class="btn" onclick="cambiar(3)">3</button>
+        <button class="btn" onclick="cambiar(4)">4</button>
+        <button class="btn" onclick="cambiar(5)">5</button>
+        <button class="btn" onclick="cambiar(6)">6</button>
+        <button class="btn" onclick="cambiar(7)">7</button>
+        <button class="btn" onclick="cambiar(8)">8</button>
+        <button class="btn" onclick="cambiar(9)">9</button>
+        <button class="btn" onclick="cambiar(10)">10</button>
+    </div>
+
+    <script>
+        const player = document.getElementById('player');
+        const botones = document.querySelectorAll('.btn');
+
+        function cambiar(num) {
+            // Actualizar botón activo
+            botones.forEach(b => b.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Cargar el video correspondiente
+            if(num === 1) player.src = "https://vod-limit-stream.dramasfree.com/a0168de5321b71f0817b5114c0db0102/c9fa9833f9eb44dfb83978dbe35a19d1-c17ceb04bcd21c4a2abff4d0b908da6f-ld.m3u8?hdnts=exp=1771235958_acl=/a0168de5321b71f0817b5114c0db0102/*_hmac=68d2c5bf6c58fe78ce2f13b7e9c84acfcf9010139c798195db4a30d409b1d8f5";
+            if(num === 2) player.src = "https://data-limit-c.solo-latino.com/80e8ebf25b0b71f0bc5587c7361c0102/a106424ae2144a2db55bf5b793c6c426-6a5ecbc1309222dd321baf651161b431-ld.m3u8?hdnts=exp=1771230164_acl=/80e8ebf25b0b71f0bc5587c7361c0102/*_hmac=6886e9b773513024b7b9cece74387817972cbbc0f71dc41578c42ec689c30d91";
+            if(num === 3) player.src = "https://data-limit-c.solo-latino.com/b057f3f15b0b71f0bfab4177d1c10102/536ec3063374430b91dab52a89982cde-3ce1cb55f8d1123f4884fae4ca36ec4a-ld.m3u8?hdnts=exp=1771234162_acl=/b057f3f15b0b71f0bfab4177d1c10102/*_hmac=52e6bb29b3547e48acdf17f8eb5c0c6953ba8f3e8f01b9bf8e2f6bd8295a7d94";
+            if(num === 4) player.src = "https://data-limit-c.solo-latino.com/506df2f15b0b71f0a6935014c1da0102/41013b72f3cd45ed86b4c8ce4cde8764-a0a22d250a002ad14fe26608a5af3ef3-ld.m3u8?hdnts=exp=1771234240_acl=/506df2f15b0b71f0a6935014c1da0102/*_hmac=d40f717221a1c4e8b63d2fa5e3c31e51a3fb2bf39b7c20f6f90821d8c552e868";
+            if(num === 5) player.src = "https://data-limit-c.solo-latino.com/40716f175b0c71f0bfeb4177d0d10102/05f64bb86c8a406cb92eb6f6e0668969-9518f654387d959a5e076c38399cac1a-ld.m3u8?hdnts=exp=1771234244_acl=/40716f175b0c71f0bfeb4177d0d10102/*_hmac=3c5b65371978c788bdf38befb05d4462e582c15a5027185cd35843d1bef86bd7";
+            if(num === 6) player.src = "https://data-limit-c.solo-latino.com/301d02205b0c71f0a6935014c1da0102/1d7b6bc7cda9457d8bb977bfb12fb389-1be3e4c63bc94f90b49f8b593be4f0a0-ld.m3u8?hdnts=exp=1771245939_acl=/301d02205b0c71f0a6935014c1da0102/*_hmac=e6440a2518c1f70f14b7f8d5e9c69751b298e38de8154842766f63cde86791ac";
+            if(num === 7) player.src = "https://data-limit-c.solo-latino.com/80774c215b0c71f0a09936a5e8aa0102/1e4cf7839fe946dcae08831f1f7dcd35-9a7540840aae6e7dbe114bc18e4b8068-ld.m3u8?hdnts=exp=1771247238_acl=/80774c215b0c71f0a09936a5e8aa0102/*_hmac=68253d6c57cb7109cc3f4249aa85843320a015abd6618d747c615249ef40ba9e";
+            if(num === 8) player.src = "https://dc1a-limit.solo-latino.com/c0c25c2b5b0c71f0a6935014c1da0102/59f46858287f4f8bb202a0abab9b14a3-d6140bda87febfb494842a43015df888-ld.m3u8?auth_key=1771179103-1c4548c8a02a46038bbe9915522981af-0-c1201f9ed28a0e98a0436297645a1705";
+            if(num === 9) player.src = "https://data-limit-c.solo-latino.com/400f9c2e5b0c71f098a15114c0db0102/c7240c64e11540a084a4394dee8a8fff-fcb299637b1c08e2fbf1ee848a5c0267-ld.m3u8?hdnts=exp=1771234281_acl=/400f9c2e5b0c71f098a15114c0db0102/*_hmac=35a4648773761014c82f3b863e03c0425efac0a5c01eca3d6a4de6bab65a6453";
+            if(num === 10) player.src = "https://data-limit-c.solo-latino.com/907a86425b0c71f0bfab87c6371c0102/e745c8ddaab646ab85391f2230d19e1a-2db9fa96cb5fc008a91d6bc1fd15a41a-ld.m3u8?hdnts=exp=1771234287_acl=/907a86425b0c71f0bfab87c6371c0102/*_hmac=86b5d85ed4e670b7ff43572b2736952590ce92e1eeeb70cc994509a37ca33fbd";
+        }
+    </script>
+</body>
+</html>
